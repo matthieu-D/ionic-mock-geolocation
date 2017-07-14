@@ -1,14 +1,47 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Ionic Geolocation Mock
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+  <ion-item>
+    <ion-label>
+      Latitude:
+    </ion-label>
+
+    <ion-input [(ngModel)]="latitude">
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      Longitude:
+    </ion-label>
+
+    <ion-input [(ngModel)]="longitude">
+    </ion-input>
+  </ion-item>
+
+  <div text-center>
+    Your position: {{coords.latitude}} , {{coords.longitude}}
+  </div>
+
+  <div text-center>
+    <button ion-button (click)="setLatitude(latitude)">
+      Set latitude
+    </button>
+
+    <button ion-button (click)="setLongitude(longitude)">
+      Set longitude
+    </button>
+
+    <button ion-button (click)="getCurrentPosition()">
+      Get current position
+    </button>
+  </div>
+
 </ion-content>
